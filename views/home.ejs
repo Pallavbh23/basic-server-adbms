@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <center>
+      <form action="/search" method="get">
+        <div class="card mt-5" style="width: 18rem">
+          <div class="card-body">
+            <h5 class="card-title" style="color: gray">Data Searcher</h5>
+            <h6 class="card-subtitle mb-2">Server based searching</h6>
+            <p class="text-muted">
+              Enter text and this program will search it for you inside the
+              server
+            </p>
+            <div class="input-group input-group-sm mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm"
+                  >Search</span
+                >
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="value"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm"
+              />
+            </div>
+
+            <button class="btn submit" type="submit">
+              <a class="card-link">Search</a>
+            </button>
+            <a href="/" class="card-link">Reset</a>
+          </div>
+        </div>
+      </form>
+
+      <table class="table col-6 mt-4 text-muted">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%for(var i = 0; i < table.length; i++){%>
+          <tr>
+            <th scope="row"><%=i+1%></th>
+            <td><%=table[i].name%></td>
+            <td><%=table[i].email%></td>
+            <td><%=table[i].phone%></td>
+          </tr>
+          <%}%>
+        </tbody>
+      </table>
+    </center>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
